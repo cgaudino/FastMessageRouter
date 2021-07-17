@@ -1,0 +1,13 @@
+{
+    "name": "com.cgaudino.fastmessagerouter",
+    "displayName": "Fast Message Router",
+    "version": "1.0.0",
+    "unity": "2019.3",
+    "keywords": [
+      "utilities",
+      "tools"
+    ],
+    "description": "A simple message router implementation that uses static generic classes for quick type lookups.",
+    "dependencies": {}
+  }
+  
