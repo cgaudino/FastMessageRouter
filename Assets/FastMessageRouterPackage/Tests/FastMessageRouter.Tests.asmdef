@@ -1,5 +1,6 @@
 {
     "name": "FastMessageRouter.Tests",
+    "rootNamespace": "FastMessageRouter.Tests",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner"
