@@ -9,7 +9,7 @@ namespace FastMessageRouter
             private static TMessage _defaultInstance;
 
             private static event Action<TMessage> _delegate;
-            private static event Action _paramaterlessDelegate;
+            private static event Action _parameterlessDelegate;
 
             static MessageBinding()
             {
@@ -23,7 +23,7 @@ namespace FastMessageRouter
 
             public static void BindMessageHandler(Action handler)
             {
-                _paramaterlessDelegate += handler;
+                _parameterlessDelegate += handler;
             }
 
             public static void RemoveMessageHandler(Action<TMessage> handler)
@@ -33,19 +33,19 @@ namespace FastMessageRouter
 
             public static void RemoveMessageHandler(Action handler)
             {
-                _paramaterlessDelegate -= handler;
+                _parameterlessDelegate -= handler;
             }
 
-            public static void RaiseMessage(TMessage handler)
+            public static void RaiseMessage(TMessage message)
             {
-                _delegate?.Invoke(handler);
-                _paramaterlessDelegate?.Invoke();
+                _delegate?.Invoke(message);
+                _parameterlessDelegate?.Invoke();
             }
 
             public static void RaiseMessage()
             {
                 _delegate?.Invoke(_defaultInstance);
-                _paramaterlessDelegate?.Invoke();
+                _parameterlessDelegate?.Invoke();
             }
         }
     }

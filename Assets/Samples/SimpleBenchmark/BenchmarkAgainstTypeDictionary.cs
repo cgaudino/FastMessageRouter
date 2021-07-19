@@ -79,14 +79,14 @@ namespace FastMessageRouter.Samples
 
         private void RunBenchmark()
         {
-            _messageRouter.BindMessageHandler<DummyMessage>(HandleMessage);
-            _dictionaryRouter.BindMessageHandler<DummyMessage>(HandleMessage);
-
             if(!int.TryParse(_iterationsInputField.text, out int iterations))
             {
                 UnityEngine.Debug.LogError($"Unable to parse number of iterations.");
                 return;
             }
+
+            _messageRouter.BindMessageHandler<DummyMessage>(HandleMessage);
+            _dictionaryRouter.BindMessageHandler<DummyMessage>(HandleMessage);
 
             double dictionaryTime = Profile(iterations, SendDictionaryMessage);
             double messageRouterTime = Profile(iterations, SendRouterMessage);
