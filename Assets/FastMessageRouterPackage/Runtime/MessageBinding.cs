@@ -47,6 +47,8 @@ namespace FastMessageRouter
                 _delegate?.Invoke(_defaultInstance);
                 _parameterlessDelegate?.Invoke();
             }
+
+            public static TMessage GetSharedInstance() => _defaultInstance;
         }
     }
 }

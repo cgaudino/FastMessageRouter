@@ -108,6 +108,12 @@ namespace FastMessageRouter
             ProcessQueuedUnbinds();
         }
 
+        public TMessage GetSharedMessageInstance<TMessage>()
+            where TMessage : new()
+        {
+            return MessageBinding<TMessage>.GetSharedInstance();
+        }
+
         private void ProcessQueuedUnbinds()
         {
             for(int i = 0; i < _queuedUnbindDelegates.Count; ++i)
